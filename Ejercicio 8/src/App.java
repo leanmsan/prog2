@@ -4,5 +4,6 @@ public class App {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese una frase");
         String s1 = sc.nextLine();
+        
     }
 }
