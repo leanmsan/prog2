@@ -6,6 +6,6 @@ public class App {
         String s1 = sc.nextLine();
         System.out.println("Dime la palabra que quieres pasar a mayuscula");
         String s2 = sc.nextLine();
-        System.out.println(s1.replace(s2, s2.toUpperCase()));
+        System.out.println(s1.replaceFirst(s2, s2.toUpperCase()));
     }
 }
