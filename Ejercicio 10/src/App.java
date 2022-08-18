@@ -5,11 +5,9 @@ public class App {
         System.out.println("Dime una frase");
         String s1 = sc.nextLine();
         int slength = s1.length();
-        if (slength % 2 == 0) {
-            String m1 = s1.substring(0, slength / 2);
-            String m2 = s1.substring(slength / 2);
-            System.out.println(m1);
-            System.out.println(m2);
-        }
+        String m1 = s1.substring(0, slength / 2);
+        System.out.println(m1);
+        String m2 = s1.substring(slength / 2);
+        System.out.println(m2);
     }
 }
