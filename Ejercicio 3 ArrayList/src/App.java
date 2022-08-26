@@ -10,12 +10,11 @@ En el método main crear una lista con 5 jugadores.
 Calcular el promedio de la edad de los jugadores recorriendo la lista y cantidad de goles totales. */
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in); 
-        List<String> listajugadores = new ArrayList<>();
+        ArrayList<String> listajugadores = new ArrayList<>();
         System.out.println("Dime cuantos jugadores quieres ingresar");
         int n = sc.nextInt();
         int totalEdad = 0;
