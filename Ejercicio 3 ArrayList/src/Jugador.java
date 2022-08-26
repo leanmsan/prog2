@@ -33,4 +33,7 @@ public class Jugador {
     public void setGoles(int goles) {
         Goles = goles;
     }
+    public String toString() {
+        return "Jugador: " + Apellido + ", " + Nombre + ". Edad: " + Edad + ". Goles: " + Goles;
+    }
 }
