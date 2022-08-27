@@ -40,7 +40,7 @@ public class App {
 
         //para control
         System.out.println("\n" + "Lista Jugadores");
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < listajugadores.size(); i++) {
             System.out.println(listajugadores.get(i));
         }
     }
