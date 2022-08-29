@@ -37,7 +37,7 @@ public class App {
 
         int promEdad = totalEdad / n;
         System.out.println("\n" + "El promedio de edad es de " + promEdad + "\n" + "El total de goles es de " + totalGoles);
-
+        
         //para control
         System.out.println("\n" + "Lista Jugadores");
         for (int i = 0; i < listajugadores.size(); i++) {
