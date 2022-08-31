@@ -15,12 +15,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in); 
         ArrayList<String> listajugadores = new ArrayList<>();
-        System.out.println("Dime cuantos jugadores quieres ingresar");
-        int n = sc.nextInt();
         int totalEdad = 0;
         int totalGoles = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println("Dime el apellido");
             String apellido = sc.next();
             System.out.println("Dime el nombre");
@@ -35,7 +33,7 @@ public class App {
             totalGoles = totalGoles + goles;
         }
 
-        int promEdad = totalEdad / n;
+        int promEdad = totalEdad / 5;
         System.out.println("\n" + "El promedio de edad es de " + promEdad + "\n" + "El total de goles es de " + totalGoles);
         
         //para control
