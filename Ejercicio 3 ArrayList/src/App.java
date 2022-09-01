@@ -13,20 +13,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in); 
-<<<<<<< HEAD
+        Scanner sc = new Scanner(System.in);
         ArrayList<Jugador> listajugadores = new ArrayList<>();
         int totalEdad = 0;
         int totalGoles = 0;
 
-        for (int i = 0; i < 2; i++) {
-=======
-        ArrayList<String> listajugadores = new ArrayList<>();
-        int totalEdad = 0;
-        int totalGoles = 0;
-
         for (int i = 0; i < 5; i++) {
->>>>>>> 30971f2010ed8aaa90869bce423e21eece408ad6
             System.out.println("Dime el apellido");
             String apellido = sc.next();
             System.out.println("Dime el nombre");
@@ -44,11 +36,8 @@ public class App {
             totalGoles += j.getGoles();
         }
 
-<<<<<<< HEAD
-        int promEdad = totalEdad / 2;
-=======
         int promEdad = totalEdad / 5;
->>>>>>> 30971f2010ed8aaa90869bce423e21eece408ad6
+
         System.out.println("\n" + "El promedio de edad es de " + promEdad + "\n" + "El total de goles es de " + totalGoles);
         
         //para control
