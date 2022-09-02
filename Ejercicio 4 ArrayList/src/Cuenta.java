@@ -88,11 +88,9 @@ public class Cuenta {
 
     public String DatosCuenta() {
         if (Activa = true) {
-            return "NroCuenta: " + NroCuenta + "\n" + "DniTitular: " + DniTitular + "\n" + "FechaApertura: " + FechaApertura
-                + "\n" + "Saldo: " + Saldo + "\n" + "La cuenta se encuentra activa";
+            return "NroCuenta: " + NroCuenta + "DniTitular: " + DniTitular + "FechaApertura: " + FechaApertura + "Saldo: " + Saldo + "La cuenta se encuentra activa";
         } else {
-            return "NroCuenta: " + NroCuenta + "\n" + "DniTitular: " + DniTitular + "\n" + "FechaApertura: " + FechaApertura
-                + "\n" + "Saldo: " + Saldo + "\n" + "La cuenta no se encuentra activa";
+            return "NroCuenta: " + NroCuenta + "DniTitular: " + DniTitular + "FechaApertura: " + FechaApertura + "Saldo: " + Saldo + "La cuenta no se encuentra activa";
         }
     }
 

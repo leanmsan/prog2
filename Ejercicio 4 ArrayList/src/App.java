@@ -7,7 +7,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         ArrayList<String> listacuenta = new ArrayList<>();
         int numcuenta = 0;
-        int ncuenta = 0;
+        // int ncuenta = 0;
         int opcion = 0;
         do {
             System.out.println("Seleccione una opcion" + "\n" + "1- Dar de alta una cuenta" + "\n"
@@ -29,12 +29,12 @@ public class App {
                     break;
                 case 2:
                     System.out.println("Ingrese el numero de cuenta");
-                    ncuenta = sc.nextInt();
+                    // ncuenta = sc.nextInt();
 
                     break;
                 case 3:
                     System.out.println("Ingrese el numero de cuenta");
-                    ncuenta = sc.nextInt();
+                    // ncuenta = sc.nextInt();
 
                     break;
                 case 4:
@@ -44,13 +44,19 @@ public class App {
                     break;
                 case 5:
                     System.out.println("Ingrese el numero de cuenta");
-                    ncuenta = sc.nextInt();
+                    // ncuenta = sc.nextInt();
 
                     break;
                 case 6:
                     System.out.println("Ingrese el numero de cuenta");
-                    ncuenta = sc.nextInt();
-
+                    String ncuenta = sc.nextLine();
+                    /* for (int i = 0; i < listacuenta.size(); i++) {
+                        if (listacuenta.get(i).contains(ncuenta)) {
+                            cuenta.desactivarCuenta();
+                        } else {
+                            System.out.println("La cuenta no existe");
+                        }
+                    } */
                     break;
                 case 7:
                     for (int i = 0; i < listacuenta.size(); i++) {
