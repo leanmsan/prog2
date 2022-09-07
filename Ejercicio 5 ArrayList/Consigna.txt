@@ -43,12 +43,12 @@ Métodos:
 • Imprimir un listado de todos aquellos artículos que comiencen con una(s) determinada(s) letra(s).
 
 • Emitir un listado de artículo discriminados por rubro, de la forma siguiente:
-_________________________________________________________________________
+_____________________________________________________________________________
                 LISTADO DE ARTICULOS POR RUBRO
-_________________________________________________________________________
+_____________________________________________________________________________
 Rubro: xxxxxxxxxxxxx	Codigo de Rubro: 9
-_________________________________________________________________________
+_____________________________________________________________________________
 Articulo CodBarras	    Articulo Nombre	         Precio	    Stock Actual
     9999	        xxxxxxxxxxxxxxxxxxxxxxxxx	$ 99.99	        9999
     9999	        xxxxxxxxxxxxxxxxxxxxxxxxx	$ 99.99	        9999
-_________________________________________________________________________
+_____________________________________________________________________________
