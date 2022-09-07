@@ -6,27 +6,27 @@ C.	Aplicar los estilos de codificación de un buen programador.
 1.	Generar una Clase RUBRO que contendrá la siguiente estructura/información:
                     COD-RUBRO	DESCRIPCION	LIST<ARTICULO>
 Los datos serán aceptados solamente si satisfacen todos los siguientes requisitos: COD-RUBRO >= 1 y <=9, No puede haber códigos de rubro repetidos
-DESCRIPCION no vacío, hasta 20 caracteres 
-LIST<ARTICULO> lista de artículos de ese rubro
+DESCRIPCION no vacío, hasta 20 caracteres. 
+LIST<ARTICULO> lista de artículos de ese rubro.
 Métodos: 
-• Constructor por defecto (crear la lista)
-• Constructor con parámetros (crear la lista)
-• Métodos Setters/getters 
+• Constructor por defecto (crear la lista).
+• Constructor con parámetros (crear la lista).
+• Métodos Setters/getters. 
 • Método “filtroArticulos(nombre)” que un String como parámetro y devuelva una lista de artículos cuyo nombre comienza con el valor pasado como parámetro. 
 • Método "toString()" que devuelva un String con TODOS los datos del rubro (código y descripción).
 • Método "toStringArt()" que devuelva un String con TODOS los datos de los artículos del rubro. 
 
 2.	Generar un Clase ARTICULO que contendrá la siguiente estructura/información:
 COD-BARRAS	NOMBRE	PRECIO	STOCK-ACTUAL
-Los datos serán aceptados solamente si satisfacen todos los siguientes controles: COD-BARRAS números de 4 dígitos, No puede haber códigos de barras repetidos
-NOMBRE no vacío hasta 30 caracteres 
-PRECIO > 0 y <= 999.99
-STOCK-ACTUAL >= 0 y <= 1000
+Los datos serán aceptados solamente si satisfacen todos los siguientes controles: COD-BARRAS números de 4 dígitos, No puede haber códigos de barras repetidos.
+NOMBRE no vacío hasta 30 caracteres. 
+PRECIO > 0 y <= 999.99.
+STOCK-ACTUAL >= 0 y <= 1000.
 En caso de que alguno de los controles no sea satisfecho, se deberá permitir el reingreso del valor correspondiente a dicho campo.
 Métodos: 
-• Constructor por defecto 
-• Constructor con parámetros 
-• Métodos Setters/getters 
+• Constructor por defecto. 
+• Constructor con parámetros. 
+• Métodos Setters/getters. 
 • Método “comprar(cantidad)” que reciba cantidad como parámetro y devuelva el stock final del producto. El sistema aumentará el stock del producto.
 • Método “vender(cantidad)” que reciba cantidad como parámetro y devuelva el importe de la venta, si la venta no se realiza por falta de stock devolver -1. El sistema verificará la existencia de stock, y si el stock es mayor o igual a la cantidad a vender se efectuará la venta y se descontará del stock. 
 • Método "toString()" que devuelva un String con TODOS los datos del articulo.
@@ -36,7 +36,7 @@ Métodos:
 • Alta de rubro: que solicite al usuario todos los datos para dar de alta un rubro. El rubro será agregado a una lista de rubros.
 • Alta de articulo: que solicite al usuario el ingreso del cod-rubro y luego todos los datos para dar de alta un artículo. El articulo será agregado a la lista de artículos del rubro correspondiente.
 • Modificación precio de articulo. El usuario ingresará cod de rubro y cod barras del articulo.
-• Listar rubros
+• Listar rubros.
 • Listar artículos de un rubro. El usuario ingresará el cod de rubro.
 • Comprar El usuario ingresará cod de rubro, cod barras del articulo y cantidad.
 • Vender El usuario ingresará cod de rubro, cod barras del articulo y cantidad.
