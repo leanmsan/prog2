@@ -23,6 +23,7 @@ public class Ejercicio4ArrayList {
                     Double saldo = sc.nextDouble();
                     Cuenta nuevaCuenta = new Cuenta(numCuenta, dnititular, fechaApertura, activa, saldo);
                     cuentas.add(nuevaCuenta);
+                    numCuenta++;
                     break;
                 case 2: 
                     deposito(cuentas, sc);
