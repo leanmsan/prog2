@@ -33,7 +33,7 @@ public class Rubro {
     }
 
     public String DatosRubro() {
-        return "Codigo de Rubro:" + Cod_Rubro + ". Descripcion: " + Descripcion;
+        return "Codigo de Rubro: " + Cod_Rubro + ". Descripcion: " + Descripcion;
     }
 
     public void altaArticulo() {
