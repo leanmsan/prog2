@@ -51,6 +51,8 @@ public class App {
     }
 
     private static void altaRubro(Scanner sc, ArrayList<Rubro> nuevoRubro) {
-
+        System.out.println("Ingrese el codigo de rubro");
+        int cod_rubro = sc.nextInt();
+        
     }
 }
