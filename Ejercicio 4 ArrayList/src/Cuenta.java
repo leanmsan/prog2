@@ -61,13 +61,20 @@ public class Cuenta {
     }
 
     public String DatosCuenta() {
-        if (esActiva = true) {
-            return "NroCuenta: " + NroCuenta + ". DniTitular: " + DniTitular + ". FechaApertura: " + FechaApertura
-                    + ". Saldo: " + Saldo + " La cuenta se encuentra Activa";
-        } else {
-            return "NroCuenta: " + NroCuenta + ". DniTitular: " + DniTitular + ". FechaApertura: " + FechaApertura
-                    + ". Saldo: " + Saldo + " La cuenta no se encuentra Activa";
-        }
+        /*
+         * if (esActiva = true) {
+         * return "NroCuenta: " + NroCuenta + ". DniTitular: " + DniTitular +
+         * ". FechaApertura: " + FechaApertura
+         * + ". Saldo: " + Saldo + " La cuenta se encuentra Activa";
+         * } else {
+         * return "NroCuenta: " + NroCuenta + ". DniTitular: " + DniTitular +
+         * ". FechaApertura: " + FechaApertura
+         * + ". Saldo: " + Saldo + " La cuenta no se encuentra Activa";
+         * }
+         */
+        return "NroCuenta: " + NroCuenta
+                + ". DniTitular: " + DniTitular + ". FechaApertura: " + FechaApertura + ". Saldo: " + Saldo + ". Activa: "
+                + esActiva;
     }
 
     public boolean Deposito(double MontoDeposito) {
