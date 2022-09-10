@@ -6,11 +6,11 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         // lista de rubros
-<<<<<<< HEAD
+
         ArrayList<Rubro> Rubros = new ArrayList<>();
-=======
+
         ArrayList<Rubro> rubros = new ArrayList<>();
->>>>>>> 19ffc32391ec50e5a39d2b2e06e1158583c5b1b5
+
 
         // menu
         int opcion = 0;
@@ -19,24 +19,24 @@ public class App {
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
-<<<<<<< HEAD
+
                     altaRubro(sc, Rubros);
-=======
+
                     altaRubro(sc, rubros);
->>>>>>> 19ffc32391ec50e5a39d2b2e06e1158583c5b1b5
+
                     break;
                 case 2:
                     break;
                 case 3:
                     break;
                 case 4:
-<<<<<<< HEAD
+
                     for (Rubro lista_rubros : Rubros) {
                         System.out.println(lista_rubros.DatosRubro());
-=======
+
                     for (Rubro lr : rubros) {
                         System.out.println(lr.DatosRubro());
->>>>>>> 19ffc32391ec50e5a39d2b2e06e1158583c5b1b5
+
                     }
                     break;
                 case 5:
@@ -69,14 +69,14 @@ public class App {
         System.out.println("10- Salir");
     }
 
-<<<<<<< HEAD
+
     private static void altaRubro(Scanner sc, ArrayList<Rubro> Rubros) {
         try {
             System.out.println("Ingrese el codigo de rubro");
             int cod_rubro = sc.nextInt();
             if ()
 
-=======
+
     private static void altaRubro(Scanner sc, ArrayList<Rubro> rubros) {
         System.out.println("Ingrese el codigo de rubro");
         int cod_rubro = sc.nextInt();
@@ -109,7 +109,7 @@ public class App {
                     }
                 }
             }
->>>>>>> 19ffc32391ec50e5a39d2b2e06e1158583c5b1b5
+
         }
     }
 }
