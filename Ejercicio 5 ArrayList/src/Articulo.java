@@ -56,7 +56,7 @@ public class Articulo {
     }
 
     public int Compra(int cantidad) {
-        Stock_Actual = Stock_Actual + cantidad;
+        Stock_Actual += cantidad;
         return Stock_Actual;
     }    
 

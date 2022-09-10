@@ -3,17 +3,18 @@ import java.util.ArrayList;
 public class Rubro {
     private int Cod_Rubro;
     private String Descripcion ;
-    private ArrayList Articulos;
-
+    private ArrayList<Articulo> Articulos;
+    
     public Rubro(int cod_Rubro, String descripcion, ArrayList articulos) {
-        Cod_Rubro = cod_Rubro;
-        Descripcion = descripcion;
-        Articulos = articulos;
+        this.Cod_Rubro = cod_Rubro;
+        this.Descripcion = descripcion;
+        this.Articulos = articulos;
     }
 
     public Rubro() {
         Cod_Rubro = 0;
         Descripcion = "";
+        Articulos = new ArrayList<>();
     }
 
     public int getCod_Rubro() {
@@ -37,6 +38,17 @@ public class Rubro {
     }
 
     public void altaArticulo() {
-        ArrayList<Articulo> articulos = new ArrayList<>();
+
+    }
+
+    public ArrayList filtro(String nombre_articulo) {
+        ArrayList<Articulo> filtro = new ArrayList<>();
+        for (int i = 0; i < Articulos.size(); i++) {
+            String res = Articulos.get(i).getNombre();
+            if (res.startsWith(nombre_articulo)) {
+                filtro.add(Articulos.get(i));
+            }
+        }
+        return filtro;
     }
 }

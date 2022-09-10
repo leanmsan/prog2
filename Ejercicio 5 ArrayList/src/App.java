@@ -5,32 +5,35 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
 
-        //lista de rubros
-        ArrayList<Rubro> nuevoRubro = new ArrayList<>();
+        // lista de rubros
+        ArrayList<Rubro> Rubros = new ArrayList<>();
 
-        //menu
+        // menu
         int opcion = 0;
         do {
             menu();
             switch (opcion) {
                 case 1:
-                    altaRubro(sc, nuevoRubro);
+                    altaRubro(sc, Rubros);
                     break;
-                case 2: 
+                case 2:
                     break;
-                case 3: 
+                case 3:
                     break;
                 case 4:
+                    for (Rubro lista_rubros : Rubros) {
+                        System.out.println(lista_rubros.DatosRubro());
+                    }
                     break;
-                case 5:  
+                case 5:
                     break;
-                case 6: 
+                case 6:
                     break;
                 case 7:
                     break;
                 case 8:
                     break;
-                case 9: 
+                case 9:
                     break;
             }
         } while (opcion != 10);
@@ -50,7 +53,12 @@ public class App {
         System.out.println("10- Salir");
     }
 
-    private static void altaRubro(Scanner sc, ArrayList<Rubro> nuevoRubro) {
+    private static void altaRubro(Scanner sc, ArrayList<Rubro> Rubros) {
+        try {
+            System.out.println("Ingrese el codigo de rubro");
+            int cod_rubro = sc.nextInt();
+            if ()
 
+        }
     }
 }
