@@ -6,11 +6,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         // lista de rubros
-
-        ArrayList<Rubro> Rubros = new ArrayList<>();
-
         ArrayList<Rubro> rubros = new ArrayList<>();
-
 
         // menu
         int opcion = 0;
@@ -19,24 +15,15 @@ public class App {
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
-
-                    altaRubro(sc, Rubros);
-
                     altaRubro(sc, rubros);
-
                     break;
                 case 2:
                     break;
                 case 3:
                     break;
                 case 4:
-
-                    for (Rubro lista_rubros : Rubros) {
-                        System.out.println(lista_rubros.DatosRubro());
-
                     for (Rubro lr : rubros) {
                         System.out.println(lr.DatosRubro());
-
                     }
                     break;
                 case 5:
@@ -69,18 +56,10 @@ public class App {
         System.out.println("10- Salir");
     }
 
-
-    private static void altaRubro(Scanner sc, ArrayList<Rubro> Rubros) {
-        try {
-            System.out.println("Ingrese el codigo de rubro");
-            int cod_rubro = sc.nextInt();
-            if ()
-
-
     private static void altaRubro(Scanner sc, ArrayList<Rubro> rubros) {
         System.out.println("Ingrese el codigo de rubro");
         int cod_rubro = sc.nextInt();
-        if (rubros.size() == 0) {
+        if (rubros.isEmpty()) {
             if (cod_rubro <= 9 && cod_rubro >= 1) {
                 System.out.println("Ingrese la descripcion del rubro");
                 String desc_rubro = sc.next();
@@ -90,26 +69,29 @@ public class App {
                     rubros.add(nuevo_rubro);
                     System.out.println("Se agrego el rubro con exito");
                 } else {
-                    System.out.println("La descripcion no puede tener mas de 20 caracteres");
+                    System.out.println("La descripcion no puede contener mas de 20 caracteres");
                 }
-            } else if (rubros.isEmpty() = false) {
-                for (int i = 0; i < rubros.size(); i++) {
-                    if (rubros.get(i).getCod_Rubro() == cod_rubro) {
-                        System.out.println("El codigo de rubro ya existe");
+            } else {
+                System.out.println("Error. Vuelva a intentar por favor");
+            }
+        } else {
+            for (int i = 0; i < rubros.size(); i++) {
+                if (rubros.get(i).getCod_Rubro() == cod_rubro) {
+                    System.out.println("El codigo de rubro ya existe");
+                } else {
+                    System.out.println("Ingrese la descripcion del rubro");
+                    String desc_rubro = sc.next();
+                    if (desc_rubro.length() < 20) {
+                        Rubro nuevo_rubro = new Rubro(cod_rubro, desc_rubro, new ArrayList<>());
+                        nuevo_rubro.setDescripcion(desc_rubro);
+                        rubros.add(nuevo_rubro);
                     } else {
-                        System.out.println("Ingrese la descripcion del rubro");
-                        String desc_rubro = sc.next();
-                        if (desc_rubro.length() < 20) {
-                            Rubro nuevo_rubro = new Rubro(cod_rubro, desc_rubro, new ArrayList<>());
-                            nuevo_rubro.setDescripcion(desc_rubro);
-                            rubros.add(nuevo_rubro);
-                        } else {
-                            System.out.println("La descripcion no puede tener mas de 20 caracteres");
-                        }
+                        System.out.println("La descripcion no puede tener mas de 20 caracteres");
                     }
                 }
             }
-
         }
     }
+
+    
 }
