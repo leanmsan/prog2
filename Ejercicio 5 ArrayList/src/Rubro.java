@@ -5,10 +5,10 @@ public class Rubro {
     private String Descripcion ;
     private ArrayList<Articulo> Articulos;
     
-    public Rubro(int cod_Rubro, String descripcion, ArrayList articulos) {
+    public Rubro(int cod_Rubro, String descripcion, ArrayList<Articulo> Articulos) {
         this.Cod_Rubro = cod_Rubro;
         this.Descripcion = descripcion;
-        this.Articulos = articulos;
+        this.Articulos = Articulos;
     }
 
     public Rubro() {
@@ -32,16 +32,20 @@ public class Rubro {
     public void setDescripcion(String descripcion) {
         Descripcion = descripcion;
     }
+    
+    public ArrayList<Articulo> getArticulos() {
+        return Articulos;
+    }
+
+    public void setArticulos(ArrayList<Articulo> articulos) {
+        Articulos = articulos;
+    }
 
     public String DatosRubro() {
         return "Codigo de Rubro: " + Cod_Rubro + ". Descripcion: " + Descripcion;
     }
 
-    public void altaArticulo() {
-
-    }
-
-    public ArrayList filtro(String nombre_articulo) {
+    public ArrayList<Articulo> filtro(String nombre_articulo) {
         ArrayList<Articulo> filtro = new ArrayList<>();
         for (int i = 0; i < Articulos.size(); i++) {
             String res = Articulos.get(i).getNombre();

@@ -18,6 +18,7 @@ public class App {
                     altaRubro(sc, rubros);
                     break;
                 case 2:
+                    altaArt(sc, rubros);
                     break;
                 case 3:
                     break;
@@ -42,6 +43,7 @@ public class App {
         System.out.println("Gracias");
     }
 
+    // metodos del menu
     private static void menu() {
         System.out.println("\n" + "Seleccione una opcion");
         System.out.println("1- Dar de alta un rubro");
@@ -57,41 +59,89 @@ public class App {
     }
 
     private static void altaRubro(Scanner sc, ArrayList<Rubro> rubros) {
-        System.out.println("Ingrese el codigo de rubro");
+        System.out.println("\n" + "Ingrese el codigo de rubro");
         int cod_rubro = sc.nextInt();
         if (rubros.isEmpty()) {
             if (cod_rubro <= 9 && cod_rubro >= 1) {
-                System.out.println("Ingrese la descripcion del rubro");
+                System.out.println("\n" + "Ingrese la descripcion del rubro");
                 String desc_rubro = sc.next();
                 if (desc_rubro.length() < 20) {
                     Rubro nuevo_rubro = new Rubro(cod_rubro, desc_rubro, new ArrayList<>());
                     nuevo_rubro.setDescripcion(desc_rubro);
                     rubros.add(nuevo_rubro);
-                    System.out.println("Se agrego el rubro con exito");
+                    System.out.println("\n" + "Se agrego el rubro con exito");
                 } else {
-                    System.out.println("La descripcion no puede contener mas de 20 caracteres");
+                    System.out.println("\n" + "La descripcion no puede contener mas de 20 caracteres");
                 }
             } else {
-                System.out.println("Error. Vuelva a intentar por favor");
+                System.out.println("\n" + "Error. Vuelva a intentar por favor");
             }
         } else {
             for (int i = 0; i < rubros.size(); i++) {
                 if (rubros.get(i).getCod_Rubro() == cod_rubro) {
-                    System.out.println("El codigo de rubro ya existe");
+                    System.out.println("\n" + "El codigo de rubro ya existe");
                 } else {
-                    System.out.println("Ingrese la descripcion del rubro");
+                    System.out.println("\n" + "Ingrese la descripcion del rubro");
                     String desc_rubro = sc.next();
                     if (desc_rubro.length() < 20) {
                         Rubro nuevo_rubro = new Rubro(cod_rubro, desc_rubro, new ArrayList<>());
                         nuevo_rubro.setDescripcion(desc_rubro);
                         rubros.add(nuevo_rubro);
                     } else {
-                        System.out.println("La descripcion no puede tener mas de 20 caracteres");
+                        System.out.println("\n" + "La descripcion no puede tener mas de 20 caracteres");
                     }
                 }
             }
         }
     }
 
-    
+    private static void altaArt(Scanner sc, ArrayList<Rubro> rubros) {
+        if (rubros.isEmpty()) {
+            System.out.println("\n" + "Error. No hay ningun rubro dado de alta");
+        } else {
+            System.out.println("\n" + "Ingrese el codigo de rubro");
+            int cod_rubro = sc.nextInt();
+            if (cod_rubro <= 9 && cod_rubro >=1) {
+                for (int i = 0; i < rubros.size(); i++) {
+                    if (rubros.get(i).getCod_Rubro() == cod_rubro){
+                        if (rubros.get(i).getArticulos().isEmpty()) {
+                            System.out.println("\n" + "Ingrese el codigo de barras");
+                            int cod_barras = sc.nextInt();
+                            System.out.println("\n" + "Ingrese el nombre del articulo");
+                            String art_nombre = sc.next();
+                            if (art_nombre.isBlank()) {
+                                System.out.println("\n" + "Error. El articulo debe tener un nombre");
+                            } else {
+                                if (art_nombre.length() < 30) {
+                                    System.out.println("\n" + "Ingrese el precio del articulo");
+                                    double art_precio = sc.nextDouble();
+                                    if (art_precio <= 999.99 && art_precio > 0){
+                                        System.out.println("\n" + "Ingrese el stock del articulo");
+                                        int art_stock = sc.nextInt(); 
+                                        if (art_stock <= 1000 && art_stock >= 0) {
+                                            Articulo nuevo_art = new Articulo(cod_barras, art_nombre, art_precio, art_stock);
+                                            rubros.get(i).getArticulos().add(nuevo_art);
+                                        } else {
+                                            System.out.println("\n" + "El stock del articulo debe ser mayo a 0 y no mayor a 1000");
+                                        } 
+                                    } else {
+                                        System.out.println("\n" + "El precio del articulo debe ser mayor a 0 y menor de 1000");
+                                    }
+                                } else {
+                                    System.out.println("\n" + "Error. El nombre del articulo no debe contener mas de 30 caracteres");
+                                }
+                            }
+                        } else {
+                            
+                        }
+
+                    } else {
+                        System.out.println("\n" + "Error. El codigo de rubro no existe");
+                    }
+                }
+            } else {
+                System.out.println("\n" + "Error. Vuelva a intentar por favor");
+            }
+        }
+    }
 }
