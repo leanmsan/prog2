@@ -61,7 +61,7 @@ public class App {
         System.out.println("6- Comprar un articulo"); // listo
         System.out.println("7- Vender un articulo"); // listo
         System.out.println("8- Buscar un articulo"); // para corregir
-        System.out.println("9- Ver lista de articulos por rubro"); // falta hacer
+        System.out.println("9- Ver lista de articulos por rubro"); // listo
         System.out.println("10- Salir");
     }
 
