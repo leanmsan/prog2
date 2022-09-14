@@ -21,7 +21,7 @@ public class App {
                     altaArt(sc, rubros);
                     break;
                 case 3:
-                    cambiar_precio(sc, rubros); 
+                    cambiar_precio(sc, rubros);
                     break;
                 case 4:
                     for (Rubro lr : rubros) { // lr = lista rubros
@@ -32,7 +32,7 @@ public class App {
                     lista_art(sc, rubros);
                     break;
                 case 6:
-                    compra_art(sc, rubros); // falta probar 
+                    compra_art(sc, rubros); // falta probar
                     break;
                 case 7:
                     venta_art(sc, rubros); // falta probar
@@ -117,33 +117,37 @@ public class App {
                         if (rubros.get(i).getArticulos().isEmpty()) {
                             System.out.println("\n" + "Ingrese el codigo de barras");
                             cod_barras = sc.nextInt();
-                            System.out.println("\n" + "Ingrese el nombre del articulo");
-                            String art_nombre = sc.next();
-                            if (art_nombre.isBlank()) {
-                                System.out.println("\n" + "Error. El articulo debe tener un nombre");
-                            } else {
-                                if (art_nombre.length() < 30) {
-                                    System.out.println("\n" + "Ingrese el precio del articulo");
-                                    double art_precio = sc.nextDouble();
-                                    if (art_precio <= 999.99 && art_precio > 0) {
-                                        System.out.println("\n" + "Ingrese el stock del articulo");
-                                        int art_stock = sc.nextInt();
-                                        if (art_stock <= 1000 && art_stock >= 0) {
-                                            Articulo nuevo_art = new Articulo(cod_barras, art_nombre, art_precio,
-                                                    art_stock);
-                                            rubros.get(i).getArticulos().add(nuevo_art);
+                            if (cod_barras <= 9999 && cod_barras >= 1000) {
+                                System.out.println("\n" + "Ingrese el nombre del articulo");
+                                String art_nombre = sc.next();
+                                if (art_nombre.isBlank()) {
+                                    System.out.println("\n" + "Error. El articulo debe tener un nombre");
+                                } else {
+                                    if (art_nombre.length() < 30) {
+                                        System.out.println("\n" + "Ingrese el precio del articulo");
+                                        double art_precio = sc.nextDouble();
+                                        if (art_precio <= 999.99 && art_precio > 0) {
+                                            System.out.println("\n" + "Ingrese el stock del articulo");
+                                            int art_stock = sc.nextInt();
+                                            if (art_stock <= 1000 && art_stock >= 0) {
+                                                Articulo nuevo_art = new Articulo(cod_barras, art_nombre, art_precio,
+                                                        art_stock);
+                                                rubros.get(i).getArticulos().add(nuevo_art);
+                                            } else {
+                                                System.out.println(
+                                                        "\n" + "El stock del articulo debe ser mayo a 0 y no mayor a 1000");
+                                            }
                                         } else {
                                             System.out.println(
-                                                    "\n" + "El stock del articulo debe ser mayo a 0 y no mayor a 1000");
+                                                    "\n" + "El precio del articulo debe ser mayor a 0 y menor de 1000");
                                         }
                                     } else {
-                                        System.out.println(
-                                                "\n" + "El precio del articulo debe ser mayor a 0 y menor de 1000");
+                                        System.out.println("\n"
+                                                + "Error. El nombre del articulo no debe contener mas de 30 caracteres");
                                     }
-                                } else {
-                                    System.out.println("\n"
-                                            + "Error. El nombre del articulo no debe contener mas de 30 caracteres");
                                 }
+                            } else {
+                                System.out.println("Error. El codigo de barra solo puede contener 4 caracteres");
                             }
                         } else {
                             for (int j = 0; j < rubros.get(i).getArticulos().size(); j++) {
@@ -152,7 +156,7 @@ public class App {
                                 } else {
                                     System.out.println("\n" + "Ingrese el codigo de barras");
                                     cod_barras = sc.nextInt();
-                                    if (cod_barras >= 1000) {
+                                    if (cod_barras >= 1000 && cod_barras <= 9999) {
                                         System.out.println("\n" + "Ingrese el nombre del articulo");
                                         String art_nombre = sc.next();
                                         if (art_nombre.isBlank()) {
@@ -165,7 +169,8 @@ public class App {
                                                     System.out.println("\n" + "Ingrese el stock del articulo");
                                                     int art_stock = sc.nextInt();
                                                     if (art_stock <= 1000 && art_stock >= 0) {
-                                                        Articulo nuevo_art = new Articulo(cod_barras, art_nombre, art_precio, art_stock);
+                                                        Articulo nuevo_art = new Articulo(cod_barras, art_nombre,
+                                                                art_precio, art_stock);
                                                         rubros.get(i).getArticulos().add(nuevo_art);
                                                     } else {
                                                         System.out.println("\n"
@@ -180,6 +185,9 @@ public class App {
                                                         + "Error. El nombre del articulo no debe contener mas de 30 caracteres");
                                             }
                                         }
+                                    } else {
+                                        System.out
+                                                .println("Error. El codigo de barra solo puede contener 4 caracteres");
                                     }
                                 }
                             }
@@ -193,17 +201,17 @@ public class App {
                 System.out.println("\n" + "Error. Vuelva a intentar por favor");
             }
         }
-    } // son 89 lineas lpm 
+    } 
 
     // metodo de menu para cambiar el precio de un art
-    private static void cambiar_precio (Scanner sc, ArrayList<Rubro> rubros) {
+    private static void cambiar_precio(Scanner sc, ArrayList<Rubro> rubros) {
         int cod_barras = 0;
         if (rubros.isEmpty()) {
             System.out.println("\n" + "Error. No hay ningun rubro dado de alta");
         } else {
             System.out.println("\n" + "Ingrese el codigo de rubro");
-            int cod_rubro = sc.nextInt(); 
-            if (cod_rubro <= 9 && cod_rubro >=1) {
+            int cod_rubro = sc.nextInt();
+            if (cod_rubro <= 9 && cod_rubro >= 1) {
                 for (int i = 0; i < rubros.size(); i++) {
                     if (rubros.get(i).getCod_Rubro() == cod_rubro) {
                         System.out.println("\n" + "Ingrese el codigo de barra del articulo");
@@ -214,7 +222,8 @@ public class App {
                                 if (nuevo_precio <= 999.99 && nuevo_precio > 0) {
                                     rubros.get(i).getArticulos().get(j).setPrecio(nuevo_precio);
                                 } else {
-                                    System.out.println("\n" + "Error. El precio del articulo debe ser mayor a 0 y menor de 1000");
+                                    System.out.println(
+                                            "\n" + "Error. El precio del articulo debe ser mayor a 0 y menor de 1000");
                                 }
                             } else {
                                 System.out.println("\n" + "Error. El codigo de barra no existe");
@@ -251,7 +260,7 @@ public class App {
     }
 
     // metodo de menu que realiza la compra de art
-    private static void compra_art(Scanner sc, ArrayList<Rubro> rubros) { 
+    private static void compra_art(Scanner sc, ArrayList<Rubro> rubros) {
         int cod_barras = 0;
         if (rubros.isEmpty()) {
             System.out.println("\n" + "Error. No hay ningun rubro dado de alta");
@@ -269,7 +278,8 @@ public class App {
                             int aux = cant + rubros.get(i).getArticulos().get(j).getStock_Actual();
                             if (aux >= 1000) {
                                 int res = aux - 1000;
-                                System.out.println("\n" + "Error. La cantidad de stock no puede superar los mil articulos");
+                                System.out.println(
+                                        "\n" + "Error. La cantidad de stock no puede superar los mil articulos");
                                 System.out.println("\n" + "Sobran " + res + " articulos");
                             } else {
                                 rubros.get(i).getArticulos().get(j).Compra(cant);
@@ -285,7 +295,7 @@ public class App {
         }
     }
 
-    // metodo de menu que realiza la venta de un art 
+    // metodo de menu que realiza la venta de un art
     private static void venta_art(Scanner sc, ArrayList<Rubro> rubros) {
         int cod_barras = 0;
         if (rubros.isEmpty()) {
@@ -337,14 +347,18 @@ public class App {
                 System.out.println("_________________________________________________________________________________");
                 System.out.println("                     LISTADO DE ARTICULOS POR RUBRO                              ");
                 System.out.println("_________________________________________________________________________________");
-                System.out.println("Rubro: " + rubros.get(i).getDescripcion() + "        Codigo de Rubro: " + rubros.get(i).getCod_Rubro());
+                System.out.println("Rubro: " + rubros.get(i).getDescripcion() + "        Codigo de Rubro: "
+                        + rubros.get(i).getCod_Rubro());
                 System.out.println("_________________________________________________________________________________");
                 System.out.println("Codigo de Barra           Articulo Nombre           Precio        Stock Actual   ");
                 for (int j = 0; j < rubros.get(i).getArticulos().size(); j++) {
-                    System.out.println("     " + rubros.get(i).getArticulos().get(j).getCod_Barras() + "            " + rubros.get(i).getArticulos().get(j).getNombre() + "      $" + rubros.get(i).getArticulos().get(j).getPrecio() + "            " + rubros.get(i).getArticulos().get(j).getStock_Actual());
+                    System.out.println("     " + rubros.get(i).getArticulos().get(j).getCod_Barras() + "            "
+                            + rubros.get(i).getArticulos().get(j).getNombre() + "      $"
+                            + rubros.get(i).getArticulos().get(j).getPrecio() + "            "
+                            + rubros.get(i).getArticulos().get(j).getStock_Actual());
                 }
                 System.out.println("_________________________________________________________________________________");
-                
+
             }
         }
     }
