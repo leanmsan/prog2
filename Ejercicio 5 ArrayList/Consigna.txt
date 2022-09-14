@@ -52,3 +52,6 @@ Articulo CodBarras	    Articulo Nombre	         Precio	    Stock Actual
     9999	        xxxxxxxxxxxxxxxxxxxxxxxxx	$ 99.99	        9999
     9999	        xxxxxxxxxxxxxxxxxxxxxxxxx	$ 99.99	        9999
 _________________________________________________________________________________
+
+
+

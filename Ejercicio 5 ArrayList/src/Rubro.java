@@ -44,13 +44,13 @@ public class Rubro {
     public String DatosRubro() {
         return "Codigo de Rubro: " + Cod_Rubro + ". Descripcion: " + Descripcion;
     }
-
-    public ArrayList<Articulo> filtro(String nombre_articulo) {
-        ArrayList<Articulo> filtro = new ArrayList<>();
+    
+    public ArrayList<String> filtro(String nombre_articulo) {
+        ArrayList<String> filtro = new ArrayList<>();
         for (int i = 0; i < Articulos.size(); i++) {
             String res = Articulos.get(i).getNombre();
             if (res.startsWith(nombre_articulo)) {
-                filtro.add(Articulos.get(i));
+                filtro.add(Articulos.get(i).datosArticulos());
             }
         }
         return filtro;
