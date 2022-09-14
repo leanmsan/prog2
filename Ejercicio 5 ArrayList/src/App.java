@@ -193,7 +193,7 @@ public class App {
                 System.out.println("\n" + "Error. Vuelva a intentar por favor");
             }
         }
-    } // son 89 lineas lpm xdd
+    } // son 89 lineas lpm 
 
     // metodo de menu para cambiar el precio de un art
     private static void cambiar_precio (Scanner sc, ArrayList<Rubro> rubros) {
