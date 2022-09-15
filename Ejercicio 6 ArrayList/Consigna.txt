@@ -1,0 +1,21 @@
+Para el siguiente problema: 
+A. Codificar en Java, utilizando menú de opciones, clases, listas, etc.. 
+B. Diseñar las clases y métodos del programa en forma correcta. 
+C. Aplicar los estilos de codificación de un buen programador.  
+Se requiere implementar un sistema que gestione información de personas y multas.  
+Multa: Tipo (1-leve, 2-grave, 3-muy grave) 
+    Descripcion 
+    Año 
+    Monto  
+Persona: 
+    DNI 
+    Apellido 
+    Nombre 
+    List<Multa>   
+Se deberán implementar las siguientes funciones, que serán accedidas por menú de opciones: 
+• -Registrar persona (Verificar que no se repita el DNI) 
+• -Registrar multa  
+• -Ver todas las personas registradas 
+• -Ver todas las multas de una persona (El usuario deberá ingresar el DNI). En la última línea se mostrará el importe total de las multas de la persona.  
+• -Ver la cantidad de multas por tipo (de cualquier persona) 
+• -Ver la cantidad de multas por año (de cualquier persona) 
