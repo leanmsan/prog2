@@ -186,8 +186,7 @@ public class App {
                                             }
                                         }
                                     } else {
-                                        System.out
-                                                .println("Error. El codigo de barra solo puede contener 4 caracteres");
+                                        System.out.println("Error. El codigo de barra solo puede contener 4 caracteres");
                                     }
                                 }
                             }
