@@ -62,7 +62,6 @@ public class App {
                 break;
             }
         }
-
         if (!repetido) {
             System.out.println("Ingrese el Apellido del infractor");
             String apellido = sc.next();
@@ -168,7 +167,9 @@ public class App {
         }
         int totalmultas = 0;
         for (Infractor infractor : lista_infractores) {
-            totalmultas = infractor.multasTipo(tipomulta);
+            for (int i = 0; i < lista_infractores.get(infractor); i++) {
+                
+            }
         }
         System.out.println(totalmultas);
     }

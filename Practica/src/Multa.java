@@ -42,9 +42,8 @@ public class Multa {
         Monto = monto;
     }
 
-    @Override
     public String toString() {
-        return "Multa [Tipo=" + Tipo + ", Descripcion=" + Descripcion + ", Año=" + Año + ", Monto=" + Monto + "]";
+        return "Tipo de Infraccion: " + Tipo + ". Descripcion: " + Descripcion + ". Año: " + Año + ". Monto: " + Monto;
     }
     
 }

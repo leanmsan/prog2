@@ -59,9 +59,8 @@ public class Infractor {
         return MontoTotal;
     }
 
-    @Override
     public String toString() {
-        return "Infractor [Dni=" + Dni + ", Apellido=" + Apellido + ", Nombre=" + Nombre + "]";
+        return "Dni Infractor" + Dni + ". Apellido: " + Apellido + ". Nombre: " + Nombre;
     }
 
     public int cantmultas() {
